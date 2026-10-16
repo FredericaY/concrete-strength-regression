@@ -1,0 +1,351 @@
+{
+  "dataset_sha256": "710076c66b9ca3f8050e7942f3dcbdbe04013534daeb0077ffd3079a52d8e0c4",
+  "q6_results_sha256": "3942712fc9b12a0fd04b1f97e9cb639c0cc3daa966ecf8150fe999ca2ddfd2db",
+  "train_rows": 900,
+  "test_rows": 130,
+  "test_sample_ids_inclusive": [
+    501,
+    630
+  ],
+  "inference": {
+    "package": "statsmodels 0.15.0",
+    "estimator": "OLS with intercept, fitted only on training observations",
+    "covariance_type": "nonrobust",
+    "use_t": true,
+    "null_hypothesis": "individual predictor coefficient equals zero, two-sided",
+    "significance_level": 0.05,
+    "multiple_testing_adjustment": "none",
+    "assumptions": "Conventional OLS inference: correctly specified conditional mean, independent homoskedastic errors; exact finite-sample t tests additionally assume normal errors."
+  },
+  "feature_transformations": {
+    "untransformed": "none",
+    "standardized": "training-set z scores",
+    "log_transformed": "natural log(1 + x), all eight predictors, no additional scaling"
+  },
+  "models": {
+    "untransformed": {
+      "training": {
+        "mse": 104.14373897310753,
+        "r2": 0.6240495572262081
+      },
+      "testing": {
+        "mse": 141.31386470839527,
+        "r2": 0.3684829048435224
+      },
+      "n_observations": 900,
+      "residual_degrees_of_freedom": 891,
+      "residual_variance_estimate": 105.19569593243189,
+      "intercept": {
+        "coefficient": -51.42949143173897,
+        "standard_error": 28.79097584607608,
+        "t_statistic": -1.7863059490131277,
+        "p_value": 0.07438967735317767,
+        "significant_at_0_05": false
+      },
+      "features": {
+        "cement": {
+          "coefficient": 0.13244887080942144,
+          "standard_error": 0.00947004120040279,
+          "t_statistic": 13.986092352353017,
+          "p_value": 2.4921741567258557e-40,
+          "significant_at_0_05": true
+        },
+        "slag": {
+          "coefficient": 0.12472769608151055,
+          "standard_error": 0.01147758664198888,
+          "t_statistic": 10.867066394011315,
+          "p_value": 6.431062503100841e-26,
+          "significant_at_0_05": true
+        },
+        "fly_ash": {
+          "coefficient": 0.1061471548983792,
+          "standard_error": 0.014357452819604046,
+          "t_statistic": 7.393174557637624,
+          "p_value": 3.304338212145605e-13,
+          "significant_at_0_05": true
+        },
+        "water": {
+          "coefficient": -0.1341000191513361,
+          "standard_error": 0.042810655993542404,
+          "t_statistic": -3.1323981387149,
+          "p_value": 0.0017904819949344562,
+          "significant_at_0_05": true
+        },
+        "superplasticizer": {
+          "coefficient": 0.1172387080699868,
+          "standard_error": 0.10037457397686211,
+          "t_statistic": 1.1680120116575752,
+          "p_value": 0.24311436149836876,
+          "significant_at_0_05": false
+        },
+        "coarse_aggregate": {
+          "coefficient": 0.028546517965165816,
+          "standard_error": 0.010277172247718349,
+          "t_statistic": 2.777662695251943,
+          "p_value": 0.005590149175015872,
+          "significant_at_0_05": true
+        },
+        "fine_aggregate": {
+          "coefficient": 0.03383503789837217,
+          "standard_error": 0.011359079222358617,
+          "t_statistic": 2.9786778695735348,
+          "p_value": 0.002973450881407816,
+          "significant_at_0_05": true
+        },
+        "age": {
+          "coefficient": 0.11880428105927751,
+          "standard_error": 0.005940295921309176,
+          "t_statistic": 19.99972436273753,
+          "p_value": 8.605349289216207e-74,
+          "significant_at_0_05": true
+        }
+      }
+    },
+    "standardized": {
+      "training": {
+        "mse": 104.14373897310753,
+        "r2": 0.6240495572262081
+      },
+      "testing": {
+        "mse": 141.31386470839038,
+        "r2": 0.3684829048435442
+      },
+      "n_observations": 900,
+      "residual_degrees_of_freedom": 891,
+      "residual_variance_estimate": 105.19569593243186,
+      "intercept": {
+        "coefficient": 36.92683533274226,
+        "standard_error": 0.34188317681861974,
+        "t_statistic": 108.01009770753697,
+        "p_value": 0.0,
+        "significant_at_0_05": true
+      },
+      "features": {
+        "cement": {
+          "coefficient": 14.031874962233521,
+          "standard_error": 1.0032734382647552,
+          "t_statistic": 13.986092352352928,
+          "p_value": 2.4921741567283667e-40,
+          "significant_at_0_05": true
+        },
+        "slag": {
+          "coefficient": 10.480636750517153,
+          "standard_error": 0.9644402979163691,
+          "t_statistic": 10.86706639401123,
+          "p_value": 6.431062503106076e-26,
+          "significant_at_0_05": true
+        },
+        "fly_ash": {
+          "coefficient": 6.8172420206591,
+          "standard_error": 0.9220994266416357,
+          "t_statistic": 7.393174557637535,
+          "p_value": 3.304338212147697e-13,
+          "significant_at_0_05": true
+        },
+        "water": {
+          "coefficient": -2.985806757762238,
+          "standard_error": 0.9532015489535,
+          "t_statistic": -3.132398138715042,
+          "p_value": 0.0017904819949336002,
+          "significant_at_0_05": true
+        },
+        "superplasticizer": {
+          "coefficient": 0.7009379731747041,
+          "standard_error": 0.6001119561946889,
+          "t_statistic": 1.1680120116575465,
+          "p_value": 0.2431143614983803,
+          "significant_at_0_05": false
+        },
+        "coarse_aggregate": {
+          "coefficient": 2.2130636814554054,
+          "standard_error": 0.7967359338621005,
+          "t_statistic": 2.7776626952518546,
+          "p_value": 0.0055901491750173764,
+          "significant_at_0_05": true
+        },
+        "fine_aggregate": {
+          "coefficient": 2.769773037953171,
+          "standard_error": 0.9298665915659607,
+          "t_statistic": 2.978677869573396,
+          "p_value": 0.002973450881409148,
+          "significant_at_0_05": true
+        },
+        "age": {
+          "coefficient": 7.28086879870002,
+          "standard_error": 0.36404845720100804,
+          "t_statistic": 19.999724362737552,
+          "p_value": 8.605349289213734e-74,
+          "significant_at_0_05": true
+        }
+      }
+    },
+    "log_transformed": {
+      "training": {
+        "mse": 55.83241823500237,
+        "r2": 0.7984495029317042
+      },
+      "testing": {
+        "mse": 54.38490724351559,
+        "r2": 0.7569594553680121
+      },
+      "n_observations": 900,
+      "residual_degrees_of_freedom": 891,
+      "residual_variance_estimate": 56.39638205555795,
+      "intercept": {
+        "coefficient": 81.00158251402604,
+        "standard_error": 75.96808170779497,
+        "t_statistic": 1.0662581006795988,
+        "p_value": 0.28659581777416193,
+        "significant_at_0_05": false
+      },
+      "features": {
+        "cement": {
+          "coefficient": 23.61630964768601,
+          "standard_error": 1.0758868110613897,
+          "t_statistic": 21.950552237356565,
+          "p_value": 1.0376623501715547e-85,
+          "significant_at_0_05": true
+        },
+        "slag": {
+          "coefficient": 2.303369891472657,
+          "standard_error": 0.1761139961284399,
+          "t_statistic": 13.07885768370624,
+          "p_value": 6.960405125703103e-36,
+          "significant_at_0_05": true
+        },
+        "fly_ash": {
+          "coefficient": 0.1966812026811064,
+          "standard_error": 0.18649558755819523,
+          "t_statistic": 1.0546158504674155,
+          "p_value": 0.2918869385934273,
+          "significant_at_0_05": false
+        },
+        "water": {
+          "coefficient": -38.333958950864684,
+          "standard_error": 4.030101433020661,
+          "t_statistic": -9.511909213196262,
+          "p_value": 1.6901410333050813e-20,
+          "significant_at_0_05": true
+        },
+        "superplasticizer": {
+          "coefficient": 1.8738461499767083,
+          "standard_error": 0.41827591778456497,
+          "t_statistic": 4.479928368579522,
+          "p_value": 8.438079286494397e-06,
+          "significant_at_0_05": true
+        },
+        "coarse_aggregate": {
+          "coefficient": 4.193998571128885,
+          "standard_error": 5.0334182021810285,
+          "t_statistic": 0.8332306998277205,
+          "p_value": 0.40493792996899974,
+          "significant_at_0_05": false
+        },
+        "fine_aggregate": {
+          "coefficient": -6.646413339237392,
+          "standard_error": 3.905891655901486,
+          "t_statistic": -1.7016379164524955,
+          "p_value": 0.08917213031618582,
+          "significant_at_0_05": false
+        },
+        "age": {
+          "coefficient": 9.034506559092497,
+          "standard_error": 0.233946346908895,
+          "t_statistic": 38.61785695081094,
+          "p_value": 1.7528468790694608e-192,
+          "significant_at_0_05": true
+        }
+      }
+    }
+  },
+  "significant_features": {
+    "untransformed": [
+      "cement",
+      "slag",
+      "fly_ash",
+      "water",
+      "coarse_aggregate",
+      "fine_aggregate",
+      "age"
+    ],
+    "standardized": [
+      "cement",
+      "slag",
+      "fly_ash",
+      "water",
+      "coarse_aggregate",
+      "fine_aggregate",
+      "age"
+    ],
+    "log_transformed": [
+      "cement",
+      "slag",
+      "water",
+      "superplasticizer",
+      "age"
+    ]
+  },
+  "q6_comparison": {
+    "cement": {
+      "q6_gd_training_r2": 0.1737167960024023,
+      "q6_first_positive_training_r2_update": 1,
+      "q6_converged": false,
+      "raw_multivariate_p_value": 2.4921741567258557e-40,
+      "log_multivariate_p_value": 1.0376623501715547e-85
+    },
+    "slag": {
+      "q6_gd_training_r2": -0.4021937404699869,
+      "q6_first_positive_training_r2_update": null,
+      "q6_converged": false,
+      "raw_multivariate_p_value": 6.431062503100841e-26,
+      "log_multivariate_p_value": 6.960405125703103e-36
+    },
+    "fly_ash": {
+      "q6_gd_training_r2": -0.1175310607677651,
+      "q6_first_positive_training_r2_update": null,
+      "q6_converged": false,
+      "raw_multivariate_p_value": 3.304338212145605e-13,
+      "log_multivariate_p_value": 0.2918869385934273
+    },
+    "water": {
+      "q6_gd_training_r2": -0.2162583400419651,
+      "q6_first_positive_training_r2_update": null,
+      "q6_converged": false,
+      "raw_multivariate_p_value": 0.0017904819949344562,
+      "log_multivariate_p_value": 1.6901410333050813e-20
+    },
+    "superplasticizer": {
+      "q6_gd_training_r2": 0.10178384708879429,
+      "q6_first_positive_training_r2_update": 259,
+      "q6_converged": true,
+      "raw_multivariate_p_value": 0.24311436149836876,
+      "log_multivariate_p_value": 8.438079286494397e-06
+    },
+    "coarse_aggregate": {
+      "q6_gd_training_r2": -0.07564982076951554,
+      "q6_first_positive_training_r2_update": null,
+      "q6_converged": false,
+      "raw_multivariate_p_value": 0.005590149175015872,
+      "log_multivariate_p_value": 0.40493792996899974
+    },
+    "fine_aggregate": {
+      "q6_gd_training_r2": -0.12428415823528782,
+      "q6_first_positive_training_r2_update": null,
+      "q6_converged": false,
+      "raw_multivariate_p_value": 0.002973450881407816,
+      "log_multivariate_p_value": 0.08917213031618582
+    },
+    "age": {
+      "q6_gd_training_r2": 0.09139528872857172,
+      "q6_first_positive_training_r2_update": 13743,
+      "q6_converged": false,
+      "raw_multivariate_p_value": 8.605349289216207e-74,
+      "log_multivariate_p_value": 1.7528468790694608e-192
+    }
+  },
+  "checks": {
+    "max_absolute_raw_standardized_feature_t_difference": 1.4210854715202004e-13,
+    "max_relative_raw_standardized_feature_p_difference": 1.0075614975843358e-12,
+    "intercept_excluded_from_invariance_check": true
+  }
+}

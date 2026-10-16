@@ -1,0 +1,122 @@
+{
+  "dataset_sha256": "710076c66b9ca3f8050e7942f3dcbdbe04013534daeb0077ffd3079a52d8e0c4",
+  "worksheet": "Sheet1",
+  "training_samples": 900,
+  "excluded_test_samples": 130,
+  "training_sample_id_ranges_inclusive": [
+    [
+      1,
+      500
+    ],
+    [
+      631,
+      1030
+    ]
+  ],
+  "excluded_test_sample_ids_inclusive": [
+    501,
+    630
+  ],
+  "sample_id_convention": "1-based observations, excluding the Excel header",
+  "standard_deviation_ddof": 1,
+  "display_decimal_places": 2,
+  "statistics": {
+    "cement": {
+      "label": "Cement",
+      "unit": "kg/m\u00b3",
+      "count": 900,
+      "mean": 277.8666666666667,
+      "sample_std": 106.00072967616717,
+      "min": 102.0,
+      "max": 540.0
+    },
+    "slag": {
+      "label": "Blast furnace slag",
+      "unit": "kg/m\u00b3",
+      "count": 900,
+      "mean": 76.10927777777779,
+      "sample_std": 84.0748647860898,
+      "min": 0.0,
+      "max": 305.3
+    },
+    "fly_ash": {
+      "label": "Fly ash",
+      "unit": "kg/m\u00b3",
+      "count": 900,
+      "mean": 57.3775,
+      "sample_std": 64.2601541503704,
+      "min": 0.0,
+      "max": 200.1
+    },
+    "water": {
+      "label": "Water",
+      "unit": "kg/m\u00b3",
+      "count": 900,
+      "mean": 180.71683333333334,
+      "sample_std": 22.277900792257725,
+      "min": 121.75,
+      "max": 247.0
+    },
+    "superplasticizer": {
+      "label": "Superplasticizer",
+      "unit": "kg/m\u00b3",
+      "count": 900,
+      "mean": 6.862327777777777,
+      "sample_std": 5.982049098922493,
+      "min": 0.0,
+      "max": 32.2
+    },
+    "coarse_aggregate": {
+      "label": "Coarse aggregate",
+      "unit": "kg/m\u00b3",
+      "count": 900,
+      "mean": 973.7590555555556,
+      "sample_std": 77.56792577983225,
+      "min": 801.0,
+      "max": 1145.0
+    },
+    "fine_aggregate": {
+      "label": "Fine aggregate",
+      "unit": "kg/m\u00b3",
+      "count": 900,
+      "mean": 772.3266111111111,
+      "sample_std": 81.90660499825552,
+      "min": 594.0,
+      "max": 992.6
+    },
+    "age": {
+      "label": "Curing age",
+      "unit": "days",
+      "count": 900,
+      "mean": 46.044444444444444,
+      "sample_std": 61.31864133812069,
+      "min": 1.0,
+      "max": 365.0
+    },
+    "strength": {
+      "label": "Compressive strength",
+      "unit": "MPa",
+      "count": 900,
+      "mean": 36.92683533274223,
+      "sample_std": 16.653008026215534,
+      "min": 2.331807832,
+      "max": 82.5992248
+    }
+  },
+  "plots": {
+    "figure_1_age_vs_strength.png": {
+      "x": "age",
+      "y": "strength",
+      "observations_plotted": 900,
+      "x_scale": "linear",
+      "y_scale": "linear"
+    },
+    "figure_2_cement_vs_strength.png": {
+      "x": "cement",
+      "y": "strength",
+      "observations_plotted": 900,
+      "x_scale": "linear",
+      "y_scale": "linear"
+    }
+  }
+}

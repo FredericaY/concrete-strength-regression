@@ -1,0 +1,63 @@
+{
+  "dataset_sha256": "710076c66b9ca3f8050e7942f3dcbdbe04013534daeb0077ffd3079a52d8e0c4",
+  "train_rows": 900,
+  "test_rows": 130,
+  "test_sample_ids_inclusive": [
+    501,
+    630
+  ],
+  "estimator": "sklearn.linear_model.LinearRegression(fit_intercept=True)",
+  "standardization_fit_on": "training set only",
+  "models": {
+    "untransformed": {
+      "training": {
+        "mse": 104.14373897310753,
+        "r2": 0.6240495572262081
+      },
+      "testing": {
+        "mse": 141.31386470839018,
+        "r2": 0.36848290484354507
+      },
+      "intercept": -51.42949143173561,
+      "coefficients": {
+        "cement": 0.1324488708094202,
+        "slag": 0.1247276960815093,
+        "fly_ash": 0.10614715489837773,
+        "water": -0.1341000191513417,
+        "superplasticizer": 0.11723870806998214,
+        "coarse_aggregate": 0.0285465179651648,
+        "fine_aggregate": 0.033835037898370564,
+        "age": 0.1188042810592776
+      },
+      "feature_matrix_rank": 8
+    },
+    "standardized": {
+      "training": {
+        "mse": 104.14373897310753,
+        "r2": 0.6240495572262081
+      },
+      "testing": {
+        "mse": 141.31386470839016,
+        "r2": 0.3684829048435453
+      },
+      "intercept": 36.92683533274223,
+      "coefficients": {
+        "cement": 14.031874962233536,
+        "slag": 10.480636750517164,
+        "fly_ash": 6.817242020659102,
+        "water": -2.985806757762251,
+        "superplasticizer": 0.7009379731746964,
+        "coarse_aggregate": 2.213063681455402,
+        "fine_aggregate": 2.769773037953177,
+        "age": 7.28086879870002
+      },
+      "feature_matrix_rank": 8
+    }
+  },
+  "equivalence_checks": {
+    "max_absolute_training_prediction_difference": 8.526512829121202e-14,
+    "max_absolute_testing_prediction_difference": 6.394884621840902e-14,
+    "max_absolute_mapped_coefficient_difference": 5.828670879282072e-16,
+    "absolute_mapped_intercept_difference": 5.684341886080802e-14
+  }
+}

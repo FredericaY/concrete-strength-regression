@@ -1,0 +1,96 @@
+{
+  "scope": "Q5.3-Q5.4: optimal unregularized least-squares models",
+  "dataset_sha256": "710076c66b9ca3f8050e7942f3dcbdbe04013534daeb0077ffd3079a52d8e0c4",
+  "train_rows": 900,
+  "test_rows": 130,
+  "test_sample_ids_inclusive": [
+    501,
+    630
+  ],
+  "estimator": "sklearn.linear_model.LinearRegression(fit_intercept=True)",
+  "standardization_fit_on": "training set only",
+  "log_transform": "natural log(1 + x) for all eight predictors, without additional scaling",
+  "target_transform": "none; original MPa units",
+  "models": {
+    "untransformed": {
+      "training": {
+        "mse": 104.14373897310753,
+        "r2": 0.6240495572262081
+      },
+      "testing": {
+        "mse": 141.31386470839018,
+        "r2": 0.36848290484354507
+      },
+      "intercept": -51.42949143173561,
+      "coefficients": {
+        "cement": 0.1324488708094202,
+        "slag": 0.1247276960815093,
+        "fly_ash": 0.10614715489837773,
+        "water": -0.1341000191513417,
+        "superplasticizer": 0.11723870806998214,
+        "coarse_aggregate": 0.0285465179651648,
+        "fine_aggregate": 0.033835037898370564,
+        "age": 0.1188042810592776
+      },
+      "feature_matrix_rank": 8
+    },
+    "standardized": {
+      "training": {
+        "mse": 104.14373897310753,
+        "r2": 0.6240495572262081
+      },
+      "testing": {
+        "mse": 141.31386470839016,
+        "r2": 0.3684829048435453
+      },
+      "intercept": 36.92683533274223,
+      "coefficients": {
+        "cement": 14.031874962233536,
+        "slag": 10.480636750517164,
+        "fly_ash": 6.817242020659102,
+        "water": -2.985806757762251,
+        "superplasticizer": 0.7009379731746964,
+        "coarse_aggregate": 2.213063681455402,
+        "fine_aggregate": 2.769773037953177,
+        "age": 7.28086879870002
+      },
+      "feature_matrix_rank": 8
+    },
+    "log_transformed": {
+      "training": {
+        "mse": 55.832418235002365,
+        "r2": 0.7984495029317042
+      },
+      "testing": {
+        "mse": 54.38490724351353,
+        "r2": 0.7569594553680212
+      },
+      "intercept": 81.00158251405922,
+      "coefficients": {
+        "cement": 23.61630964768571,
+        "slag": 2.3033698914725997,
+        "fly_ash": 0.19668120268110809,
+        "water": -38.33395895086639,
+        "superplasticizer": 1.873846149976609,
+        "coarse_aggregate": 4.193998571126988,
+        "fine_aggregate": -6.64641333923882,
+        "age": 9.034506559092481
+      },
+      "feature_matrix_rank": 8
+    }
+  },
+  "optimality_checks": {
+    "untransformed": {
+      "max_absolute_prediction_difference_from_reference": 2.5579538487363607e-13,
+      "training_mse_gradient_infinity_norm": 2.360644025935067e-11
+    },
+    "standardized": {
+      "max_absolute_prediction_difference_from_reference": 8.526512829121202e-14,
+      "training_mse_gradient_infinity_norm": 1.711618501253219e-14
+    },
+    "log_transformed": {
+      "max_absolute_prediction_difference_from_reference": 5.329070518200751e-13,
+      "training_mse_gradient_infinity_norm": 5.050221969011343e-13
+    }
+  }
+}

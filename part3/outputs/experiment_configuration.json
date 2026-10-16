@@ -1,0 +1,233 @@
+{
+  "dataset_sha256": "710076c66b9ca3f8050e7942f3dcbdbe04013534daeb0077ffd3079a52d8e0c4",
+  "common": {
+    "training_samples": 900,
+    "testing_samples": 130,
+    "test_sample_ids_inclusive": [
+      501,
+      630
+    ],
+    "batch_size": 900,
+    "initialization": "all parameters zero",
+    "fit_intercept": true,
+    "regularization": "none",
+    "max_updates": 20000,
+    "gradient_infinity_norm_tolerance": 1e-06,
+    "target_transform": "none",
+    "scaling_ddof": 0,
+    "seed": null,
+    "row_shuffle": false,
+    "mse_110_role": "comparison milestone only",
+    "positive_r2_role": "post-fit assignment check only"
+  },
+  "multivariate_gd": [
+    {
+      "features": "untransformed",
+      "questions": [
+        "Q3",
+        "Q5"
+      ],
+      "learning_rate": 1e-07,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 20000,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 23.80862077917362
+    },
+    {
+      "features": "standardized",
+      "questions": [
+        "Q3",
+        "Q5"
+      ],
+      "learning_rate": 0.05,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 4728,
+      "stop_reason": "gradient_tolerance",
+      "final_gradient_infinity_norm": 9.98689755502053e-07
+    },
+    {
+      "features": "log_transformed",
+      "questions": [
+        "Q5"
+      ],
+      "learning_rate": 0.001,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 20000,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 0.4526750526079238
+    }
+  ],
+  "univariate_gd": [
+    {
+      "feature": "cement",
+      "learning_rate": 5.653906668952867e-06,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 20000,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 3.5713023385969476
+    },
+    {
+      "feature": "slag",
+      "learning_rate": 3.889899729996622e-05,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 20000,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 16.13330689206784
+    },
+    {
+      "feature": "fly_ash",
+      "learning_rate": 6.740905938485834e-05,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 20000,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 9.92887494009378
+    },
+    {
+      "feature": "water",
+      "learning_rate": 1.508053959207061e-05,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 20000,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 2.20308437490114
+    },
+    {
+      "feature": "superplasticizer",
+      "learning_rate": 0.005994619051086593,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 3316,
+      "stop_reason": "gradient_tolerance",
+      "final_gradient_infinity_norm": 9.987995781636351e-07
+    },
+    {
+      "feature": "coarse_aggregate",
+      "learning_rate": 5.23989392525196e-07,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 20000,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 0.8009299709015216
+    },
+    {
+      "feature": "fine_aggregate",
+      "learning_rate": 8.289253556421068e-07,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 20000,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 1.3447900568710243
+    },
+    {
+      "feature": "age",
+      "learning_rate": 8.508828285321147e-05,
+      "max_updates": 20000,
+      "gradient_tolerance": 1e-06,
+      "actual_updates": 20000,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 4.723388149652342
+    }
+  ],
+  "reference_estimators": [
+    {
+      "questions": "Q4",
+      "estimator": "LinearRegression",
+      "inputs": "Raw; standardized",
+      "settings": "Intercept; no penalty"
+    },
+    {
+      "questions": "Q5.3",
+      "estimator": "LinearRegression",
+      "inputs": "Raw; standard; log",
+      "settings": "Intercept; no penalty"
+    },
+    {
+      "questions": "Q6 reference",
+      "estimator": "LinearRegression",
+      "inputs": "8 single; 1 multi",
+      "settings": "Raw; intercept"
+    },
+    {
+      "questions": "Q7",
+      "estimator": "statsmodels OLS",
+      "inputs": "Raw; standard; log",
+      "settings": "t test; df = 891"
+    }
+  ],
+  "inference": {
+    "package": "statsmodels 0.15.0",
+    "estimator": "OLS with intercept, fitted only on training observations",
+    "covariance_type": "nonrobust",
+    "use_t": true,
+    "null_hypothesis": "individual predictor coefficient equals zero, two-sided",
+    "significance_level": 0.05,
+    "multiple_testing_adjustment": "none",
+    "assumptions": "Conventional OLS inference: correctly specified conditional mean, independent homoskedastic errors; exact finite-sample t tests additionally assume normal errors."
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "direct_and_scipy": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "xlrd": "2.0.2",
+      "matplotlib": "3.10.0",
+      "scikit-learn": "1.6.1",
+      "statsmodels": "0.15.0",
+      "scipy": "1.18.1"
+    },
+    "installed_packages": {
+      "cloudpickle": "3.1.2",
+      "contourpy": "1.4.0",
+      "cycler": "0.12.1",
+      "fonttools": "4.66.1",
+      "formulaic": "1.2.2",
+      "interface_meta": "2.0.1",
+      "joblib": "1.6.0",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.0",
+      "narwhals": "2.26.0",
+      "numpy": "2.1.3",
+      "packaging": "26.3",
+      "pandas": "2.2.3",
+      "patsy": "1.0.3",
+      "pillow": "12.3.0",
+      "pyparsing": "3.3.3",
+      "python-dateutil": "2.9.0.post0",
+      "pytz": "2026.4",
+      "scikit-learn": "1.6.1",
+      "scipy": "1.18.1",
+      "six": "1.17.0",
+      "statsmodels": "0.15.0",
+      "threadpoolctl": "3.7.0",
+      "typing_extensions": "4.16.0",
+      "tzdata": "2026.4",
+      "wrapt": "2.5.0",
+      "xlrd": "2.0.2"
+    }
+  },
+  "source_results_sha256": {
+    "q3": "f9fcf4b4eb69e045ccab7d53440fdb6727bcf6b5087834097aae0a67425d7be3",
+    "q5_gd": "6e73496a4209e7fb43c036ac477d61a2973575a8c5c3cdf7cc117bb37ab47f67",
+    "q6": "3942712fc9b12a0fd04b1f97e9cb639c0cc3daa966ecf8150fe999ca2ddfd2db",
+    "q7": "c8c9a61ecf9d64769311813e741c2eee9311355d0052c372e88cc37cfb5a7db9"
+  },
+  "source_code_sha256": {
+    "gradient_descent.py": "3581da233fc6d4f670795a0dbc3268361104a183c88d9f1c04056b59fae47c71",
+    "data.py": "e68848a9e097595611634d95b9476c8068e93df7fa111403f9be04451e2bd0fb",
+    "metrics.py": "b76ff6050248ef6dba6cef901a51297a549dc625b5ba7bf571717c5c2b13458a",
+    "run_q2.py": "3097a70d7762d65a4a0421cb1ed6d6d6ec04882f67e8d8502466eecd988eb7ce",
+    "run_q3.py": "79dda712c6be7bd6b9bf30ae8672abacd6f7124a85ea194ae7717e7f310978d6",
+    "run_q4.py": "6eadb9510c50a6d5384d2754d77ec9071df5d9cca97bd6811942fc2cb9936f03",
+    "run_q5.py": "b7288f473144ddef398f6ac51d42cffb6ac1c312c45dcb62e69f31c7d26408af",
+    "run_q5_optimal.py": "de215dee0870e65ff83f5e4b70068052558872c44a64ce1f1b3c46cbea48ba00",
+    "run_q6.py": "bf716acc4fd00d1170e66995969bff39573d15b567e7eaa65061d32ce4bb7ab2",
+    "run_q7.py": "b232db7fb8f51e65321edb62bfb1f6ff142532c652c44a6264159ff80d9c0ee5"
+  }
+}

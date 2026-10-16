@@ -1,0 +1,84 @@
+{
+  "scope": "Q5.1-Q5.2: custom gradient descent; no external optimum fits",
+  "dataset_sha256": "710076c66b9ca3f8050e7942f3dcbdbe04013534daeb0077ffd3079a52d8e0c4",
+  "train_rows": 900,
+  "test_rows": 130,
+  "test_sample_ids_inclusive": [
+    501,
+    630
+  ],
+  "settings": {
+    "max_iter": 20000,
+    "gradient_tolerance": 1e-06,
+    "comparison_target_mse": 110.0,
+    "initial_parameters": "all zeros",
+    "log_transform": "natural log(1 + x) applied to all 8 predictors, without subsequent scaling",
+    "target_transform": "none; original MPa units",
+    "comparison_note": "Common training-error milestone, not a stopping rule or distance from each model's optimum."
+  },
+  "models": {
+    "untransformed": {
+      "learning_rate": 1e-07,
+      "updates": 20000,
+      "converged": false,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 23.80862077917362,
+      "initial_training_mse": 1640.6057077056348,
+      "training": {
+        "mse": 104.7672650263408,
+        "r2": 0.6217986787950567
+      },
+      "testing": {
+        "mse": 139.55453411352116,
+        "r2": 0.3763451719252945
+      },
+      "first_positive_training_r2_update": 14,
+      "first_update_at_target_mse": 7615,
+      "loss_monotonically_nonincreasing": true,
+      "hessian_condition_number": 11841852489.055382,
+      "stable_learning_rate_upper_bound": 5.988793267356688e-07
+    },
+    "standardized": {
+      "learning_rate": 0.05,
+      "updates": 4728,
+      "converged": true,
+      "stop_reason": "gradient_tolerance",
+      "final_gradient_infinity_norm": 9.98689755502053e-07,
+      "initial_training_mse": 1640.6057077056348,
+      "training": {
+        "mse": 104.1437389731522,
+        "r2": 0.6240495572260469
+      },
+      "testing": {
+        "mse": 141.31381417879243,
+        "r2": 0.36848313065510907
+      },
+      "first_positive_training_r2_update": 11,
+      "first_update_at_target_mse": 61,
+      "loss_monotonically_nonincreasing": true,
+      "hessian_condition_number": 86.8015691591503,
+      "stable_learning_rate_upper_bound": 0.42668096276236644
+    },
+    "log_transformed": {
+      "learning_rate": 0.001,
+      "updates": 20000,
+      "converged": false,
+      "stop_reason": "iteration_cap",
+      "final_gradient_infinity_norm": 0.4526750526079238,
+      "initial_training_mse": 1640.6057077056348,
+      "training": {
+        "mse": 61.53555636024044,
+        "r2": 0.7778616373093934
+      },
+      "testing": {
+        "mse": 48.85574551410561,
+        "r2": 0.7816687092067114
+      },
+      "first_positive_training_r2_update": 5,
+      "first_update_at_target_mse": 871,
+      "loss_monotonically_nonincreasing": true,
+      "hessian_condition_number": 16344505.018002912,
+      "stable_learning_rate_upper_bound": 0.0056780798345445836
+    }
+  }
+}
